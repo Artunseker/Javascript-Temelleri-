@@ -25,3 +25,43 @@ console.log(typeof yaş);
 console.log(typeof isMarried);
 console.log(typeof x);
 console.log(typeof z);
+
+
+//Concatenation
+console.log('Benim Adım ' + name);
+
+//Template String
+const hello =`Benim Adım ${name} Ve Benim Yaşım ${age}`;
+console.log(hello);
+
+
+const s = 'Hello World!';
+console.log(s.length); //12
+console.log(s.substring(0,5).toUpperCase()); //HELLO
+const a="technology,companies,computer,IT";
+console.log(a.split(',')); 
+
+//Arrays
+
+/* multi
+line
+comment */
+
+const numbers = new Array(1,2,3,4,5,6,7,8,9);
+console.log(numbers);
+
+const fruits= ['apples','orange','pears',10,true];
+
+fruits[3]='grapes';//const olan değeri sadece değiştiremessin içindeki değerlerde değişiklik yapabilirsin
+
+fruits.push("mangos");// sona ekleme
+
+fruits.unshift('strawberries') //başa ekleme
+
+fruits.pop(); // sonuncusunu atar
+
+console.log(Array.isArray(fruits));//burada array olan bir dize ile diğer arrayi karşılaştırıyoruz
+
+console.log(fruits.indexOf('orange')); //indexini verir
+
+console.log(fruits[1],fruits[3]);
