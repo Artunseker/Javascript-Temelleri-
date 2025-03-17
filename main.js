@@ -65,3 +65,51 @@ console.log(Array.isArray(fruits));//burada array olan bir dize ile diğer array
 console.log(fruits.indexOf('orange')); //indexini verir
 
 console.log(fruits[1],fruits[3]);
+
+//sözlükler
+
+const person = {
+  firstName: 'Artun',
+  age: 19,
+  address: {
+    street: 'zümrütevler',
+    city: 'İstanbul'
+  },
+  hobbies: ['okuma', 'yazma', 'kod yazma']
+};// bu nesnedir object türündedir
+
+console.log(person.firstName, person.address);
+
+console.log(person.hobbies[1])
+
+console.log(person.address.city)
+
+const {firstName,address:{city}} =person;
+console.log(firstName,city);
+
+person.email='artunseker@gmail.com';
+console.log(person);
+
+const todos = [
+    {
+        id:1,
+        text:'Parti',
+        isCompleted:true
+    },
+    {
+        id:2,
+        text:'Parti sonrası temizlik',
+        isCompleted:false
+    }
+];
+
+console.log(todos);
+// ben parti sonrası temizliği almak istiyom
+console.log(todos[1].text);
+
+//todolarımız bir listenin içinde listenin içindede sözlüklere ayrılmış durumda
+
+//ben bu todoları json verisi yapcam
+
+const todoJSON = JSON.stringify(todos);
+console.log(todoJSON);
