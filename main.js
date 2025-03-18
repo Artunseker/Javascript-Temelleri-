@@ -135,11 +135,17 @@ while(i<10){
   i++;
 }
 
-//forEach, map, filter
+//forEach, map, filter (bunların hepsi verdiğimiz dizede tek tek değerlerin üstünde)
 
 todos.forEach(function(todo){ // sadece yazdırır normal bir döngü gibi çalışır
   console.log(todo.text);
 });
+
+function yazdir(t){
+  console.log(t.text);
+}
+todos.forEach(yazdir);
+
 
 const todoText = todos.map(function(todo){ //map yeni bir dizi döndürür döngü şeklinde;
   return todo.text;
@@ -155,3 +161,35 @@ const todoText1 = todos.filter(function(todo){//filter sadece şartı sağlayanl
 })
 console.log(todoText1);
 
+
+// Condition
+
+const c=10;
+const k=11;
+if(c==10){
+  console.log('x degeri 10');
+}
+
+if(c===10|| y>10){ //veri tipi ile de uyuşması lazım int===int
+  console.log('x degeri 10 ya da y 10dan buyuk');
+}else if(c>10 && k>10){ 
+  console.log('x degeri 10dan buyuk ve k değeri 10 dan buyuk');
+}else{
+  console.log('x degeri 10dan kucuk');
+}
+
+const color = c>9 ? 'red':'blue';
+
+console.log(color);
+
+switch(color) {
+  case 'red':
+    console.log('renk kırmızı');
+    break;
+   case 'blue':
+    console.log('renk mavi');
+    break;
+  default:
+    console.log('renk bilinmiyor');
+    break;
+}
