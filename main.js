@@ -113,3 +113,45 @@ console.log(todos[1].text);
 
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
+
+//For
+
+for(let i=0;i<=10;i++){
+  console.log(`loop: ${i}`);
+}
+
+for(let a=0;a<todos.length;a++){
+  console.log(`todo: ${todos[a].text}`);
+}
+
+for(let t of todos){
+  console.log(t.text);
+}
+
+//While
+let i=0
+while(i<10){
+  console.log(`while loop: ${i}`);
+  i++;
+}
+
+//forEach, map, filter
+
+todos.forEach(function(todo){ // sadece yazdırır normal bir döngü gibi çalışır
+  console.log(todo.text);
+});
+
+const todoText = todos.map(function(todo){ //map yeni bir dizi döndürür döngü şeklinde;
+  return todo.text;
+});
+
+console.log (todoText);
+
+
+const todoText1 = todos.filter(function(todo){//filter sadece şartı sağlayanları bir dizi içine atar ve döndürür
+  return todo.isCompleted === true;
+}).map(function(todo){
+  return todo.text;
+})
+console.log(todoText1);
+
