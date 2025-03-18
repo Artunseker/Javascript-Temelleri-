@@ -193,3 +193,36 @@ switch(color) {
     console.log('renk bilinmiyor');
     break;
 }
+
+//Function
+
+function topla(a=1,b=1){
+  return a+b;
+}
+console.log(topla());
+console.log(topla(5,3));
+
+//aynısı
+const topla2=(num1,num2) => num1 + num2;
+console.log(topla2(5,3));
+
+function Person(firstName,lastName,Doğumu){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.Doğumu = new Date(Doğumu);
+  this.DoğumYılı= function(){ 
+    return this.Doğumu.getFullYear();
+  }
+}
+Person.prototype.AdSoyad= function(){//prototype içine koyarsak metodumuzu daha az bellek kullanımı ve daha düzenli kod yazarız
+  return `${this.firstName} ${this.lastName}`;
+}
+
+//Instantiate Object
+const Artun= new Person('Artun','Şeker','12-2-2005');
+const Cre= new Person('Kerim','Kardaş','1-9-2006');
+
+console.log(Artun);
+
+console.log(Artun.DoğumYılı());
+console.log(Cre.AdSoyad());
