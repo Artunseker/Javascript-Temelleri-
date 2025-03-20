@@ -226,3 +226,22 @@ console.log(Artun);
 
 console.log(Artun.DoğumYılı());
 console.log(Cre.AdSoyad());
+
+
+//Class
+class Person10{
+  constructor(firstName,lastName,Doğumu){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.Doğumu = new Date(Doğumu);
+  }
+  getBirthYear(){
+    return this.Doğumu.getFullYear();
+  }
+  getFullName(){
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const kerem= new Person10('Kerem','Aksoy','04-24-2004');
+console.log(kerem);
