@@ -1,37 +1,27 @@
-// Single element
+const form = document.querySelector("#my-form");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const msg = document.querySelector(".msg");
+const userList = document.querySelector("#users");
 
-console.log(document.getElementById('my-form'));//burada html deki yazdığımız kullanıcının gördüğü kodları javasrcripte alıyoruz ve console da görebiliyoruz
+form.addEventListener("submit",onSubmit);
 
-console.log(document.querySelector('h1'));
+function onSubmit(e) {
+    e.preventDefault();
 
-//Multiple element
+    if(nameInput.value === '' || emailInput.value === ''){
+        msg.classList.add("error");
+        msg.innerHTML = "Please enter all fields.";
 
-console.log(document.querySelectorAll('.item'));//burada array metodları kullanabiliriz
+        setTimeout(() => msg.remove(), 3000);
+    } else{
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(`${nameInput.value} ${emailInput.value}`));
+        
+        userList.appendChild(li);
 
-console.log(document.getElementsByClassName('item'));//direk array metodları kullanılamaz sadece classlar alınır arraye dönüştürmek lazım
-
-console.log(document.getElementsByTagName('li'));
-
-
-const items = document.querySelectorAll('.item');
-
-items.forEach(function(item){
-    console.log(item);
-})
-
-const ul = document.querySelector('.items');
-//ul.remove();
-//ul.lastElementChild.remove();
-ul.firstElementChild.textContent = 'Ayarlar';
-ul.children[1].innerText = 'Oyun Ayarları'; //farklı bir şekli text in
-ul.lastElementChild.innerHTML='<h4>Çıkış</h4>';//HTML de ekleyebiliriz
-
-const btn =document.querySelector('.btn');
-btn.style.background='red';
-
-btn.addEventListener('click',(e) =>{ //click yerine mouseover gibi farklı eylemlerde koyulabilir
-    e.preventDefault(); //butonun default eventlerini iptal ediyoruz
-    document.querySelector('#my-form').style.background='#ccc';
-    document.querySelector('body').classList.add('bg-dark');
-    document.querySelector('.items').lastElementChild.innerText = 'Çıkış'
-});
+        //clear fields
+        nameInput.value = '';
+        emailInput.value = '';
+    }
+}
